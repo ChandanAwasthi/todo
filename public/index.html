@@ -8,6 +8,26 @@
 <body>
     <h1>Task and Notes Manager Application</h1>
 
-    <p>This is task manager application. Thanks</p>
+    <form id="myForm" class="myForm">
+        <label for="title">Title :</label><br>
+        <input type="text" id="txttitle" name="txttitle"><br>
+        <label for="description">Description :</label><br>
+        <input type="text" id="txtDescription" name="txtDescription"><br>
+        <label for="date">Date :</label><br>
+        <input type="date" id="txtDate" name="txtDate"><br>
+        <label for="status">Status :</label><br>
+        <input type="checkbox" id="checkInComplete" name="checkInComplete" value="checkInComplete"> <br>
+        <label for="statusIncomplete">Incomplete</label><br>
+        <label for="priority">Priority :</label>
+        <select id="priority" name="priority">
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        <option value="High">High</option>
+        </select> <br><br>
+        <button type="submit"></button>
+      </form> 
+
+      
+
 </body>
 </html>

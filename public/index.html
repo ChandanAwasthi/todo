@@ -1,33 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Tasks
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="jquery_func.js"></script>
+    <script  async defer src="script.js"></script>
 </head>
+
 <body>
-    <h1>Task and Notes Manager Application</h1>
+    <div class="about">
+        <h2 style="display:inline; padding-left: 3%;">Task Manager</h2>
+    </div>
+    <div class="main_body">
+        <h3 style="padding: 20px;"> Tasks and Notes Manager
+            <button style="margin-left: 1%;" class="btn btn-success" title="Add Task" onclick="document.getElementById('id01').style.display='block'"> <span class="glyphicon glyphicon-plus"></span>  Create New Task</button>
+        </h3>
+           <button type="button" id="sortDateAecs"  title="Sort by Date Ascending Order" onclick="SortByDateAesc()" class="btn btn-link">
+                        <span class="glyphicon glyphicon-sort-by-attributes"></span> Sort By Ascending Date 
+                      </button>
+                      <button type="button" id="sortDateDesc"  title="Sort by Date Descending Order" onclick="SortByDateDesc()" class="btn btn-link">
+                        <span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Sort By Descending Date 
+                      </button>
+                      <button type="button" id="sortPriority"  title="Sort by Priority" onclick="SortByPriority()"    class="btn btn-link">
+                        <span class="glyphicon glyphicon-sort"></span> Sort By Priority
+                      </button>
+                      <button type="button" id="sortStatus"  title="Sort by Status"  onclick="SortByStatus()"  class="btn btn-link">
+                        <span class="glyphicon glyphicon-sort"></span> Sort By Status
+                      </button>
+                      
+                      <br><h3> Tasks</h3>
+<div class="div1">
+    
+<ul  id="List" >
+    
 
-    <form id="myForm" class="myForm">
-        <label for="title">Title :</label><br>
-        <input type="text" id="txttitle" name="txttitle"><br>
-        <label for="description">Description :</label><br>
-        <input type="text" id="txtDescription" name="txtDescription"><br>
-        <label for="date">Date :</label><br>
-        <input type="date" id="txtDate" name="txtDate"><br>
-        <label for="status">Status :</label><br>
-        <input type="checkbox" id="checkInComplete" name="checkInComplete" value="checkInComplete"> <br>
-        <label for="statusIncomplete">Incomplete</label><br>
-        <label for="priority">Priority :</label>
-        <select id="priority" name="priority">
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
-        <option value="High">High</option>
+</ul>
+</div>
+
+
+    </div>
+
+    <div id="id01" class="modal">
+        <form id="formadd" class="modal-content"  >
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+          <div class="container">
+            <h1>Add New Task</h1>
+            <p>Enter details to add Task</p>
+            <hr>
+            <h4>Task Name :</h4>
+                <input  type="text"  id="NewTask" name="NewTask" placeholder="Add Task Name" required><br>
+                <h4>Description :</h4>
+                <textarea type="text"  row='2' id="NewDescription" name="NewDescription" placeholder="Add Description" ></textarea>
+        <br><h4>Due Date :</h4><input type="date"  id="NewDue"  >
+       <br> <h4> Priority :</h4>
+        <select name="priority" id="priority"> 
+            <option  value="High">High</option> 
+            <option value="Medium" selected>Medium </option> 
+            <option value="Low">Low</option> 
+            
         </select> <br><br>
-        <button type="submit"></button>
-      </form> 
 
-      
+                  <div class="clearfix">
+              <button type="button" class="btn btn-danger"  onclick="document.getElementById('id01').style.display='none' " >Cancel</button>
+              <button type="submit" class="btn btn-success" >Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="edit" class="modal">
+        <form id="formedit" class="modal-content"  action="#">
+            <span onclick="document.getElementById('edit').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+          <div class="container">
+
+            <h1>Edit Details</h1><hr>
+            <h4>Due Date</h4><input type="date"  id="modifyDate"  required>
+            <br> <h4> Priority </h4>
+            <select name="priority" id="select1" required> 
+                <option  value="High">High</option> 
+                <option value="Medium">Medium </option> 
+                <option value="Low">Low</option> 
+            </select> <br><h4> Status </h4>
+                <select name="status" id="select2" required> 
+                    <option  value="Complete">Complete</option> 
+                    <option value="Incomplete">Incomplete </option> 
+               
+            </select> <br><br><button type="submit" class="btn btn-success" >Save</button>
+        </div>
+    </form>
+      </div>
+
 
 </body>
+
 </html>

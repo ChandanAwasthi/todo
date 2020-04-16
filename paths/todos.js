@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const  { todosTable }  = require('../db');
+const  { todosTable }  = require('../database');
 const noteroute = require('./note')
 
 const route = Router();
-route.use("/notes",noteroute)
+route.use("/note",noteroute)
 
 
 //Getting all data details

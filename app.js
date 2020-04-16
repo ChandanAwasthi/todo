@@ -1,6 +1,6 @@
 const express =  require('express');
-const { db } = require('./db');
-const todoRoute = require('./routes/todos');
+const { db } = require('./database');
+const todoRoute = require('./paths/todos');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }))

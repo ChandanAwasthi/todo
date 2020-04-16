@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const  notes = require('../db').notes
+const  notes = require('../database').notes
 const route = Router()
 
 route.get("/:id", async (req,res)=>{

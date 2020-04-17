@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const  { todosTable }  = require('../database');
+const  { todosTable }  = require('../db');
 const noteroute = require('./note')
 
 const route = Router();
@@ -11,7 +11,7 @@ route.use("/note",noteroute)
 route.get('/', async(req, res) => {
     const todos = await todosTable.findAll();
     res.send(todos)
-
+    
   });
   
 //Getting data details by id
